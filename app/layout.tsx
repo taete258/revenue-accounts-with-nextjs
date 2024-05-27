@@ -1,14 +1,18 @@
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-
+import "@mantine/core/styles.css";
+import { MantineProvider } from "@mantine/core";
+import Header from "./../components/Header";
+import "@mantine/charts/styles.css";
+import Footer from "@/components/Footer";
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "http://localhost:3000";
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "Revenue-Accounts",
+  description: "Create with Next.js and Supabase",
 };
 
 export default function RootLayout({
@@ -18,9 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="bg-background text-foreground">
-        <main className="min-h-screen flex flex-col items-center">
-          {children}
+      <body>
+        <main className="min-h-screen flex flex-col items-center w-full bg-sky-200 dark:bg-slate-700 z-20">
+          <MantineProvider>
+            <Header />
+            <div className=" w-full h-full pt-16 pb-14">{children}</div>
+            <Footer />
+          </MantineProvider>
         </main>
       </body>
     </html>
