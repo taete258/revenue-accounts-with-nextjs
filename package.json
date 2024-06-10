@@ -18,6 +18,8 @@
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
     "autoprefixer": "10.4.17",
+    "axios": "^1.7.2",
+    "axios-retry": "^4.4.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.11",
     "embla-carousel-react": "^8.1.3",

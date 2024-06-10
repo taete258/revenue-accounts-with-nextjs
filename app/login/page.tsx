@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { SubmitButton } from "./submit-button";
+import { SubmitButton } from "./components/submit-button";
 
 const Page = async ({
   searchParams,
@@ -19,12 +19,13 @@ const Page = async ({
     const supabase = createClient();
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
-    const { error } = await supabase.auth.signInWithPassword({
+    const data = await supabase.auth.signInWithPassword({
       email,
       password,
     });
+    console.log(data);
 
-    if (error) {
+    if (data.error) {
       return redirect("/login?message=Could not authenticate user");
     }
 
