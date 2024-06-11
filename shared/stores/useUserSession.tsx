@@ -49,9 +49,6 @@ export const UserSessionProvider: React.FC<UserSessionProviderProps> = ({
     );
   }, []);
 
-  if (!user && !session) {
-    return;
-  }
   return (
     <UserSessionContext.Provider value={{ user, session }}>
       {children}
