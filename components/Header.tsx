@@ -4,7 +4,7 @@ import ThemeSwitchToggle from "./ThemeSwitch";
 import Image from "next/image";
 export default function Header() {
   return (
-    <nav className="fixed w-full flex justify-between border-b border-b-foreground/10 h-16 shadow-sm bg-white dark:bg-slate-800 z-20">
+    <nav className="sticky top-0 w-full flex justify-between border-b border-b-foreground/10 h-16 shadow-sm bg-white dark:bg-slate-800 z-20">
       <div className="w-full flex justify-between items-center p-3">
         <Link className="text-2xl flex flex-row gap-1 items-center" href={"/"}>
           <Image

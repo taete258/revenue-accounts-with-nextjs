@@ -12,23 +12,23 @@ const AuthButton = async () => {
     "use server";
     const supabase = createClient();
     await supabase.auth.signOut();
-    return redirect("/login");
+    return redirect("/signin");
   };
   return user ? (
     <div className="flex items-center gap-4">
       <p className="hidden sm:flex">Hey, {user.email}</p>
       <form action={signOut}>
         <button className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">
-          Logout
+          Sign out
         </button>
       </form>
     </div>
   ) : (
     <Link
-      href="/login"
+      href="/signin"
       className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
     >
-      Login
+      Sign In
     </Link>
   );
 };

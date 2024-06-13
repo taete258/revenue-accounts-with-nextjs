@@ -24,15 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className}>
       <body>
-        <main className="min-h-screen flex flex-col items-center w-full bg-sky-200 dark:bg-slate-700 z-20">
-          <UserSessionProvider>
-            <MantineProvider>
+        <UserSessionProvider>
+          <MantineProvider>
+            <div className="relative flex flex-col min-h-dvh bg-sky-200 dark:bg-slate-700 z-20">
               <Header />
-              <div className=" w-full h-full pt-16 pb-14">{children}</div>
+              {children}
               <Footer />
-            </MantineProvider>
-          </UserSessionProvider>
-        </main>
+            </div>
+          </MantineProvider>
+        </UserSessionProvider>
       </body>
     </html>
   );
