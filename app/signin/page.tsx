@@ -34,7 +34,7 @@ const Page = async ({
   };
 
   return (
-    <div className="flex flex-1 flex-col justify-center items-center">
+    <div className="flex flex-1 flex-col justify-center items-center px-8">
       <h1 className="my-6 text-4xl text-gray-500 dark:text-slate-200 font-semibold">
         Sign In
       </h1>
