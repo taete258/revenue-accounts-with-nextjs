@@ -38,13 +38,46 @@ const Page = async ({
   };
 
   return (
-    <div className="relative flex flex-1 justify-center items-center px-8 ">
-      <form className="animate-in flex flex-col justify-center gap-2 text-gray-600  bg-inherit rounded-xl min-w-full sm:min-w-[500px] p-6 shadow-md mt-[10%] bg-white dark:bg-slate-600">
-        <label className="text-md dark:text-slate-200" htmlFor="email">
+    <div className="relative flex flex-1 flex-col justify-center items-center px-8 ">
+      <h1 className="my-6 text-4xl text-gray-500 dark:text-slate-200 font-semibold">
+        Sign Up
+      </h1>
+      <form className="animate-in flex flex-col justify-center gap-2 text-gray-600  rounded-xl min-w-full sm:min-w-[500px] p-6 shadow-md bg-white dark:bg-slate-600">
+        <label
+          className="text-md text-gray-500 dark:text-slate-200"
+          htmlFor="first-name"
+        >
+          First Name
+        </label>
+        <input
+          className="rounded-md px-4 py-2  border mb-2 dark:bg-slate-600"
+          type="text"
+          name="first-name"
+          required
+          autoCorrect="off"
+        />
+        <label
+          className="text-md text-gray-500 dark:text-slate-200"
+          htmlFor="last-name"
+        >
+          Last Name
+        </label>
+        <input
+          className="rounded-md px-4 py-2  border mb-2 dark:bg-slate-600"
+          type="text"
+          name="last-name"
+          required
+          autoCorrect="off"
+        />
+
+        <label
+          className="text-md text-gray-500 dark:text-slate-200"
+          htmlFor="email"
+        >
           Email
         </label>
         <input
-          className="rounded-md px-4 py-2  border mb-6 dark:bg-slate-600"
+          className="rounded-md px-4 py-2  border mb-2 dark:bg-slate-600"
           name="email"
           placeholder="you@example.com"
           required
@@ -54,7 +87,7 @@ const Page = async ({
           Password
         </label>
         <input
-          className="rounded-md px-4 py-2  border mb-6 dark:bg-slate-600"
+          className="rounded-md px-4 py-2  border mb-2 dark:bg-slate-600"
           type="password"
           name="password"
           placeholder="••••••••"
@@ -62,7 +95,7 @@ const Page = async ({
           autoCorrect="off"
         />
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 mt-4">
           <SubmitButton formAction={signUp}>Sign Up</SubmitButton>
         </div>
 
