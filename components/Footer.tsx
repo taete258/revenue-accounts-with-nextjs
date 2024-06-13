@@ -3,9 +3,9 @@ import React from "react";
 import { FaLinkedin } from "react-icons/fa6";
 const Footer: React.FC = () => {
   return (
-    <footer className="sticky bottom-0 w-full border-t border-t-foreground/10 p-4 flex justify-center text-center bg-white dark:bg-slate-800">
-      <p className="flex flex-row gap-2 items-center">
-        Developed by{" "}
+    <footer className="sticky bottom-0 w-full border-t border-t-foreground/10 px-4 py-2 flex justify-center text-center bg-white dark:bg-slate-800">
+      <p className="flex flex-row flex-wrap gap-x-2 gap-y-1 items-center justify-center">
+        <span>Developed by</span>
         <Link
           href="https://www.linkedin.com/in/ratchanon-pheungta-6846a9229"
           target="_blank"
