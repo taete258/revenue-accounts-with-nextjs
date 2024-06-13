@@ -3,7 +3,7 @@ import React from "react";
 import { FaLinkedin } from "react-icons/fa6";
 const Footer: React.FC = () => {
   return (
-    <footer className="fixed bottom-0 w-full border-t border-t-foreground/10 p-4 flex justify-center text-center bg-white dark:bg-slate-800">
+    <footer className="sticky bottom-0 w-full border-t border-t-foreground/10 p-4 flex justify-center text-center bg-white dark:bg-slate-800">
       <p className="flex flex-row gap-2 items-center">
         Developed by{" "}
         <Link
