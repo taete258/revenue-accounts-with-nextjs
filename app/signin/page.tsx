@@ -33,6 +33,30 @@ const Page = async ({
     return redirect("/");
   };
 
+  const signUp = async (formData: FormData) => {
+    "use server";
+    const supabase = createClient();
+    const origin = headers().get("origin");
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${origin}/signup`,
+      },
+    });
+
+    console.log(error);
+
+    if (error) {
+      return redirect("/signin?message=Could not authenticate user");
+    }
+
+    return redirect("/signin?message=Check email to continue sign in process");
+  };
+
   return (
     <div className="flex flex-1 flex-col justify-center items-center px-8">
       <h1 className="my-6 text-4xl text-gray-500 dark:text-slate-200 font-semibold">
@@ -68,14 +92,13 @@ const Page = async ({
         />
 
         <div className="flex flex-col gap-2 mt-4">
-          <SubmitButton formAction={signIn}>Sign In</SubmitButton>
+          <SubmitButton color="primary" formAction={signIn}>
+            Sign In
+          </SubmitButton>
           <Divider my="xs" label="OR" labelPosition="center" />
-          <Link
-            className="border rounded-md px-4 py-2 text-center "
-            href="/signup"
-          >
+          <SubmitButton color="secondary" formAction={signUp}>
             Sign Up
-          </Link>
+          </SubmitButton>
         </div>
 
         {searchParams?.message && (
